@@ -1,8 +1,0 @@
-开发流程
-1、用户管理->注册
-  验证：用户名是否重复
-
-  登陆测试后台测试代码
-  http://www.travel.com/loginUser?&username=admin123&password=123457
-  
-  http://www.travel.com/loginUser?&username=admin123&password=123456
