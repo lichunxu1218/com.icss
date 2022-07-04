@@ -16,20 +16,8 @@ public class TabRouteController {
     @Autowired
     private TabRouteService tabRouteService;
     //查询所有
-    @RequestMapping("/getAll")
-    public ResResult<PageInfo> getAll(int cid, int page) {
-        PageInfo pageInfo = tabRouteService.selectByCid(cid, page);
-        ResResult rr = null;
-        if (pageInfo.getSize() != 0) {
-            rr = new ResResult(1, "ok", pageInfo);
-        } else {
-            rr = new ResResult(0, "erro");
-        }
-        return rr;
-    }
-    //模糊查询
-    @RequestMapping("/getByValue")
-    public ResResult<PageInfo> getByValue(int cid, int page,String value) {
+    @RequestMapping("/select")
+    public ResResult<PageInfo> getAll(int cid, int page,String value) {
         PageInfo pageInfo = tabRouteService.selectByCidAndValue(cid,page,value);
         ResResult rr = null;
         if (pageInfo.getSize() != 0) {
@@ -39,4 +27,5 @@ public class TabRouteController {
         }
         return rr;
     }
+
 }

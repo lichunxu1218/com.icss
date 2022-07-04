@@ -20,7 +20,5 @@ public interface TabRouteService{
 
     int updateByPrimaryKey(TabRoute record);
 
-    PageInfo selectByCid(int cid, int page);
-
     PageInfo selectByCidAndValue(int cid, int page ,String value);
 }

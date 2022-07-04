@@ -22,8 +22,8 @@ import java.util.Properties;
 //Spring的配置类
 @Configuration
 @ComponentScan(value = "com.icss.service")
-@PropertySource("classpath:dbconfig123.properties")
-//@PropertySource("classpath:dbconfig.properties")
+//@PropertySource("classpath:dbconfig123.properties")
+@PropertySource("classpath:dbconfig.properties")
 @EnableTransactionManagement //启用事务管理器类
 @MapperScan(basePackages = "com.icss.mapper") //扫描Mybatis 的mapper报下的接口
 public class RootConfig {

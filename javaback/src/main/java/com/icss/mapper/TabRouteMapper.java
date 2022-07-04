@@ -18,7 +18,5 @@ public interface TabRouteMapper {
 
     int updateByPrimaryKey(TabRoute record);
 
-    List<TabRoute> selectByCid(int cid);
-
     List<TabRoute> selectByCidAndValue(@Param("cid") int cid,@Param("value")  String value);
 }

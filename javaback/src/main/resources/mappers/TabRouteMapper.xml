@@ -176,11 +176,15 @@
     where rid = #{rid,jdbcType=INTEGER}
   </update>
 
-  <select id="selectByCid" resultMap="BaseResultMap">
-    select * from tab_route where cid =#{cid}
-    </select>
-
   <select id="selectByCidAndValue" resultMap="BaseResultMap">
-    select * from tab_route where cid =#{cid} and rname like concat('%',#{value},'%')
+    select * from tab_route
+    <where>
+      <if test="cid != null">
+       and cid =#{cid}
+      </if>
+      <if test="value != null">
+        and rname like concat('%',#{value},'%')
+      </if>
+    </where>
   </select>
 </mapper>

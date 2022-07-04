@@ -1,6 +1,9 @@
 $(function () {
     login()
-
+    $(".search a").click(function () {
+        window.sessionStorage.setItem("value", $(".search input").val())
+        location.href="route_list.html"//待修改
+    });
     $.ajax({
         url:"http://www.travel.com/category/getAll",
         data: "",

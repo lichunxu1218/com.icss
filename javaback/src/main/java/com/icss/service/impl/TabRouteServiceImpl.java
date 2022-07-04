@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class TabRouteServiceImpl implements TabRouteService{
+public class TabRouteServiceImpl implements TabRouteService {
 
     @Resource
     private TabRouteMapper tabRouteMapper;
@@ -47,18 +47,9 @@ public class TabRouteServiceImpl implements TabRouteService{
     }
 
     @Override
-    public PageInfo selectByCid(int cid, int page) {
-
-        PageHelper.startPage(page,8);
-        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCid(cid) ,10);
-
-        return pageInfo;
-    }
-
-    @Override
     public PageInfo selectByCidAndValue(int cid, int page, String value) {
-        PageHelper.startPage(page,8);
-        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCidAndValue(cid,value) ,10);
+        PageHelper.startPage(page, 8);
+        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCidAndValue(cid, value), 10);
 
         return pageInfo;
     }
