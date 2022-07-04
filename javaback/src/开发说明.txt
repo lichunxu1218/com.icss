@@ -22,3 +22,5 @@ https://github.com/lichunxu1218/com.icss.git
 
    http://www.travel.com/route/getAll?cid=5&page=1
    2）根据要搜索的内容，显示线路信息
+
+    http://www.travel.com/route/getByValue?cid=5&page=1&value=年
