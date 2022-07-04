@@ -2,6 +2,8 @@ package com.icss.mapper;
 
 import com.icss.bean.TabCategory;
 
+import java.util.List;
+
 public interface TabCategoryMapper {
     int deleteByPrimaryKey(Integer cid);
 
@@ -14,4 +16,6 @@ public interface TabCategoryMapper {
     int updateByPrimaryKeySelective(TabCategory record);
 
     int updateByPrimaryKey(TabCategory record);
+
+    List<TabCategory> getAll();
 }

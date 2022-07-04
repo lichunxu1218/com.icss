@@ -1,6 +1,9 @@
 package com.icss.service;
 
 import com.icss.bean.TabCategory;
+
+import java.util.List;
+
 public interface TabCategoryService{
 
 
@@ -16,4 +19,5 @@ public interface TabCategoryService{
 
     int updateByPrimaryKey(TabCategory record);
 
+    List<TabCategory> getAll();
 }

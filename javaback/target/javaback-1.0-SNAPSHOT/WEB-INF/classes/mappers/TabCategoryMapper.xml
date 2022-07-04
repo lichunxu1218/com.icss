@@ -58,4 +58,7 @@
     set cname = #{cname,jdbcType=VARCHAR}
     where cid = #{cid,jdbcType=INTEGER}
   </update>
+  <select id="getAll" resultType="com.icss.bean.TabCategory">
+    select * from tab_category
+  </select>
 </mapper>

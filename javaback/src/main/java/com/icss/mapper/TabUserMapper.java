@@ -1,6 +1,9 @@
 package com.icss.mapper;
 
+import com.icss.bean.TabCategory;
 import com.icss.bean.TabUser;
+
+import java.util.List;
 
 public interface TabUserMapper {
     int deleteByPrimaryKey(Integer uid);
@@ -18,4 +21,6 @@ public interface TabUserMapper {
     TabUser selectByUserName(String username);
 
     TabUser loginUser(TabUser tabUser);
+
+
 }

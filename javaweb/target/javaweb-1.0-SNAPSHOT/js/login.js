@@ -11,10 +11,10 @@ $("#btn_sub").click(function () {
                 // alert("登录成功")
                 window.sessionStorage.setItem("username", obj.data.username)
                 location.href = "index.html"
-
             } else {
                 alert("登录失败")
             }
         }
     })
+
 });

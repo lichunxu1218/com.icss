@@ -6,6 +6,8 @@ import com.icss.service.TabCategoryService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class TabCategoryServiceImpl implements TabCategoryService{
 
@@ -40,6 +42,11 @@ public class TabCategoryServiceImpl implements TabCategoryService{
     @Override
     public int updateByPrimaryKey(TabCategory record) {
         return tabCategoryMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<TabCategory> getAll() {
+        return tabCategoryMapper.getAll();
     }
 
 }
