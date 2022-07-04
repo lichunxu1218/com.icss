@@ -1,0 +1,21 @@
+﻿开发流程
+1、用户管理->注册
+  验证：用户名是否重复
+
+  登陆测试后台测试代码
+  http://www.travel.com/loginUser?&username=admin123&password=123457
+  
+  http://www.travel.com/loginUser
+  ?&username=admin123&password=123456
+
+
+https://github.com/lichunxu1218/com.icss.git
+3.用户管理------》用户登录
+    1）登录成功，显示用户名，我的收藏，购物车，退出
+    2）直接访问index.html 显示  登录  注册
+    3）退出功能实现：点退出，显示首页，同时  显示  登录  注册
+4.在header.html中导航的显示
+
+5.点击导航的国内游 ，显示国内游的所有线路信息
+   1）分页实现
+   2）根据要搜索的内容，显示线路信息
