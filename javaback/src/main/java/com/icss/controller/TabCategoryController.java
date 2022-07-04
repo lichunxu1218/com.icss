@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 导航栏控制层
+ */
 @RestController
 @RequestMapping("/category")
 public class TabCategoryController {

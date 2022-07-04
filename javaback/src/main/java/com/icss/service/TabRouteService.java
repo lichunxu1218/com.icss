@@ -22,4 +22,5 @@ public interface TabRouteService{
 
     PageInfo selectByCid(int cid, int page);
 
+    PageInfo selectByCidAndValue(int cid, int page ,String value);
 }

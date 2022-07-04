@@ -50,7 +50,15 @@ public class TabRouteServiceImpl implements TabRouteService{
     public PageInfo selectByCid(int cid, int page) {
 
         PageHelper.startPage(page,8);
-        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCid(cid));
+        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCid(cid) ,10);
+
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo selectByCidAndValue(int cid, int page, String value) {
+        PageHelper.startPage(page,8);
+        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCidAndValue(cid,value) ,10);
 
         return pageInfo;
     }

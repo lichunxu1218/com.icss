@@ -179,4 +179,8 @@
   <select id="selectByCid" resultMap="BaseResultMap">
     select * from tab_route where cid =#{cid}
     </select>
+
+  <select id="selectByCidAndValue" resultMap="BaseResultMap">
+    select * from tab_route where cid =#{cid} and rname like concat('%',#{value},'%')
+  </select>
 </mapper>
