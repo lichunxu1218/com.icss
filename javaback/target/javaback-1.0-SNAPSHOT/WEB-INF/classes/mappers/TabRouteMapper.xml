@@ -175,4 +175,8 @@
       sourceId = #{sourceid,jdbcType=VARCHAR}
     where rid = #{rid,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByCid" resultMap="BaseResultMap">
+    select * from tab_route where cid =#{cid}
+    </select>
 </mapper>

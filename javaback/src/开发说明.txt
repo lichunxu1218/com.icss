@@ -17,5 +17,8 @@ https://github.com/lichunxu1218/com.icss.git
 4.在header.html中导航的显示
 
 5.点击导航的国内游 ，显示国内游的所有线路信息
+
    1）分页实现
+
+   http://www.travel.com/route/getAll?cid=5&page=1
    2）根据要搜索的内容，显示线路信息

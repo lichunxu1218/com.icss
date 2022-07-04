@@ -16,6 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 
 //Spring的配置类
@@ -60,7 +61,11 @@ public class RootConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setMapperLocations(mapperLocations);
 
+        //创建分页插件对象
         PageInterceptor pageInterceptor = new PageInterceptor();
+        Properties prop  = new Properties();
+        prop.setProperty("reasonable","true");
+        pageInterceptor.setProperties(prop);
         sqlSessionFactoryBean.setPlugins(new Interceptor[]{pageInterceptor});
 
         return sqlSessionFactoryBean;

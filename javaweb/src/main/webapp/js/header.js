@@ -7,13 +7,14 @@ $(function () {
         type:"get",
         dataType:"json",
         success:function (obj) {
-            $(".nav").empty();
-            var str="<li class=\"nav-active\"><a href=\"index.html\">首页</a></li>"
-            $.forEach(obj.data,function (inedex,category) {
-                str+= '<li><a class="head_lan">'+category.cname+'</a></li>' ;
+            var str = '<li className=\"nav-active\"><a href=\"index.html\">首页</a></li>';
+            obj.data.forEach(function (category) {
+
+                str+='<li><a href="route_list.html?cid='+category.cid+'">'+category.cname+'</a></li>';
             })
-           str="<li><a href=\"favoriterank.html\">收藏排行榜</a></li"
-            $(".nav").append(str);
+            str+=' <li><a href="favoriterank.html">收藏排行榜</a></li>';
+
+            $("#category").html(str);
         }
     });
 })

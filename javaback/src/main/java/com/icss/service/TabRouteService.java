@@ -1,6 +1,10 @@
 package com.icss.service;
 
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabRoute;
+
+import java.util.List;
+
 public interface TabRouteService{
 
 
@@ -15,5 +19,7 @@ public interface TabRouteService{
     int updateByPrimaryKeySelective(TabRoute record);
 
     int updateByPrimaryKey(TabRoute record);
+
+    PageInfo selectByCid(int cid, int page);
 
 }

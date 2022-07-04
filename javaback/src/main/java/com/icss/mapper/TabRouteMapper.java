@@ -2,6 +2,8 @@ package com.icss.mapper;
 
 import com.icss.bean.TabRoute;
 
+import java.util.List;
+
 public interface TabRouteMapper {
     int deleteByPrimaryKey(Integer rid);
 
@@ -14,4 +16,6 @@ public interface TabRouteMapper {
     int updateByPrimaryKeySelective(TabRoute record);
 
     int updateByPrimaryKey(TabRoute record);
+
+    List<TabRoute> selectByCid(int cid);
 }

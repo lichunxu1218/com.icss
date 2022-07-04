@@ -1,11 +1,15 @@
 package com.icss.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabRoute;
 import com.icss.mapper.TabRouteMapper;
 import com.icss.service.TabRouteService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class TabRouteServiceImpl implements TabRouteService{
 
@@ -40,6 +44,15 @@ public class TabRouteServiceImpl implements TabRouteService{
     @Override
     public int updateByPrimaryKey(TabRoute record) {
         return tabRouteMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public PageInfo selectByCid(int cid, int page) {
+
+        PageHelper.startPage(page,8);
+        PageInfo pageInfo = new PageInfo(tabRouteMapper.selectByCid(cid));
+
+        return pageInfo;
     }
 
 }
