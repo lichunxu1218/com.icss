@@ -82,4 +82,9 @@
       smallPic = #{smallpic,jdbcType=VARCHAR}
     where rgid = #{rgid,jdbcType=INTEGER}
   </update>
+
+  <select id="selectImgByRid" resultMap="BaseResultMap">
+    select * from tab_route_img where rid=#{rid}
+  </select>
+
 </mapper>

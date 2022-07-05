@@ -1,6 +1,9 @@
 package com.icss.service;
 
 import com.icss.bean.TabSeller;
+
+import java.util.List;
+
 public interface TabSellerService{
 
 
@@ -15,5 +18,7 @@ public interface TabSellerService{
     int updateByPrimaryKeySelective(TabSeller record);
 
     int updateByPrimaryKey(TabSeller record);
+
+    List<TabSeller> selectSellerBySid(int sid);
 
 }

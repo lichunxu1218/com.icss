@@ -6,6 +6,8 @@ import com.icss.service.TabRouteImgService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class TabRouteImgServiceImpl implements TabRouteImgService{
 
@@ -40,6 +42,11 @@ public class TabRouteImgServiceImpl implements TabRouteImgService{
     @Override
     public int updateByPrimaryKey(TabRouteImg record) {
         return tabRouteImgMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<TabRouteImg> selectImgByRid(int rid) {
+        return tabRouteImgMapper.selectImgByRid(rid);
     }
 
 }

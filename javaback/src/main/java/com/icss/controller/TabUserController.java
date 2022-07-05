@@ -21,7 +21,7 @@ public class TabUserController {
      */
     @RequestMapping("/getUserByUserName")
     public ResResult getUserByUserName(String username) {
-        System.out.println(username);
+//        System.out.println(username);
         TabUser user = tabUserService.selectByUserName(username);
         ResResult rr = null;
         if (user == null) {
@@ -40,7 +40,7 @@ public class TabUserController {
      */
     @RequestMapping("/registerUser")
     public ResResult registerUser(TabUser user) {
-       // System.out.println(user); 登陆信息传入成功
+        // System.out.println(user); 登陆信息传入成功
         int i = tabUserService.insert(user);
         ResResult rr = null;
         if (i > 0) {
@@ -63,10 +63,23 @@ public class TabUserController {
         TabUser tabUser = tabUserService.loginUser(user);
         ResResult rr = null;
         if (tabUser != null) {
-            rr = new ResResult(1, "ok",tabUser);
+            rr = new ResResult(1, "ok", tabUser);
         } else {
             rr = new ResResult(0, "erro");
         }
+        return rr;
+    }
+
+    /**
+     * 退出登陆功能
+     *
+     * @return 退出结果成功1 失败0
+     */
+    @RequestMapping("/exitLogin")
+    public ResResult exit() {
+
+        ResResult rr = new ResResult(1, "ok");
+
         return rr;
     }
 }

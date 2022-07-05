@@ -20,5 +20,7 @@ https://github.com/lichunxu1218/com.icss.git
 
    1）分页实现
    2）根据要搜索的内容，显示线路信息
-   che
+  测试用
     http://www.travel.com/route/select?cid=5&page=1&value=
+
+    查看详细：http://www.travel.com/route/detail?rid=1

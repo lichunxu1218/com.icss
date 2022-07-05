@@ -21,7 +21,7 @@ public class TabCategoryController {
     @RequestMapping("/getAll")
     public ResResult<TabCategory> getAll() {
         List<TabCategory> list = tabCategoryService.getAll();
-        list.forEach(x-> System.out.println(x));
+//        list.forEach(x-> System.out.println(x));
         ResResult rr = null;
         if (list != null) {
             rr = new ResResult(1, "ok", list);
@@ -30,5 +30,7 @@ public class TabCategoryController {
         }
         return rr;
     }
+
+
 
 }

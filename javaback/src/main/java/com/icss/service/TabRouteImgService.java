@@ -1,7 +1,10 @@
 package com.icss.service;
 
 import com.icss.bean.TabRouteImg;
-public interface TabRouteImgService{
+
+import java.util.List;
+
+public interface TabRouteImgService {
 
 
     int deleteByPrimaryKey(Integer rgid);
@@ -16,4 +19,5 @@ public interface TabRouteImgService{
 
     int updateByPrimaryKey(TabRouteImg record);
 
+    List<TabRouteImg> selectImgByRid(int rid);
 }

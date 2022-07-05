@@ -3,18 +3,24 @@ package com.icss.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabRoute;
+import com.icss.bean.vo.TabRouteVo;
+import com.icss.mapper.TabRouteImgMapper;
 import com.icss.mapper.TabRouteMapper;
+import com.icss.mapper.TabSellerMapper;
 import com.icss.service.TabRouteService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class TabRouteServiceImpl implements TabRouteService {
 
     @Resource
     private TabRouteMapper tabRouteMapper;
+    @Resource
+    private TabRouteImgMapper tabRouteImgMapper;
+    @Resource
+    private TabSellerMapper tabSellerMapper;
 
     @Override
     public int deleteByPrimaryKey(Integer rid) {
@@ -32,8 +38,15 @@ public class TabRouteServiceImpl implements TabRouteService {
     }
 
     @Override
-    public TabRoute selectByPrimaryKey(Integer rid) {
-        return tabRouteMapper.selectByPrimaryKey(rid);
+    public TabRouteVo selectByPrimaryKey(Integer rid) {
+        TabRoute tabRoute = tabRouteMapper.selectByPrimaryKey(rid);
+        TabRouteVo tabRouteVo = new TabRouteVo();
+        tabRouteVo.setTabRoute(tabRoute);
+        tabRouteVo.setImgList(tabRouteImgMapper.selectImgByRid(tabRoute.getRid()));
+
+        tabRouteVo.setTabSeller(tabSellerMapper.selectByPrimaryKey(tabRoute.getSid()));
+
+        return tabRouteVo;
     }
 
     @Override

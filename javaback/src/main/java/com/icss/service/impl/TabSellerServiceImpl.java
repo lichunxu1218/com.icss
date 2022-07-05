@@ -6,6 +6,8 @@ import com.icss.service.TabSellerService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class TabSellerServiceImpl implements TabSellerService{
 
@@ -40,6 +42,11 @@ public class TabSellerServiceImpl implements TabSellerService{
     @Override
     public int updateByPrimaryKey(TabSeller record) {
         return tabSellerMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<TabSeller> selectSellerBySid(int sid) {
+        return null;
     }
 
 }
