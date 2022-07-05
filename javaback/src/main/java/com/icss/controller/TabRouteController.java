@@ -20,7 +20,7 @@ public class TabRouteController {
 
     //查询所有信息，含模糊查询
     @RequestMapping("/select")
-    public ResResult<PageInfo> getAll(int cid, int page, String value) {
+    public ResResult<PageInfo> getAll(Integer cid, int page, String value) {
         PageInfo pageInfo = tabRouteService.selectByCidAndValue(cid, page, value);
         ResResult rr = null;
         if (pageInfo.getSize() != 0) {
@@ -37,7 +37,7 @@ public class TabRouteController {
      * @return 数据
      */
     @RequestMapping("/detail")
-    public ResResult<TabRouteVo> getRouteByrid(int rid) {
+    public ResResult<TabRouteVo> getRouteByrid(Integer rid) {
 
        TabRouteVo tabRouteVo = tabRouteService.selectByPrimaryKey(rid);
         ResResult rr = null;

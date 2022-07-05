@@ -3,7 +3,7 @@ $(function () {
     //数据内容展示含查询
     $(".search a").click(function () {
         var value = $(".search input").val()
-        window.sessionStorage.setItem("value", value)
+
         var cid = getParameter("cid")
         location.href = "route_list.html?cid=" + cid + "&value=" + value
     });

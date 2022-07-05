@@ -39,7 +39,7 @@ function route_list(cid, page, value) {
                         '        <span>' + nr.price + '</span>\n' +
                         '      <span>起</span>\n' +
                         '       </p>\n' +
-                        '       <p><a href="route_detail.html">查看详情</a></p>\n' +
+                        '       <p><a href="route_detail.html?rid='+nr.rid+'">查看详情</a></p>\n' +
                         '        </div>\n' +
                         '  </li>';
 

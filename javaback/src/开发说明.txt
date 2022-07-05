@@ -21,6 +21,11 @@ https://github.com/lichunxu1218/com.icss.git
    1）分页实现
    2）根据要搜索的内容，显示线路信息
   测试用
+  //在首页查询
+    http://www.travel.com/route/select?page=1&value=春节
+   //在国内游中查询 所有
     http://www.travel.com/route/select?cid=5&page=1&value=
+    //在国内游中查询 条件查询
+    http://www.travel.com/route/select?cid=5&page=1&value=春节
 
     查看详细：http://www.travel.com/route/detail?rid=1
