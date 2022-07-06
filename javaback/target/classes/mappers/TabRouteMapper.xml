@@ -187,4 +187,14 @@
       </if>
     </where>
   </select>
+
+  <select id="getAllByRids" resultMap="BaseResultMap">
+    select * from tab_route
+    <where>
+      <foreach collection="array" item="rid" open="rid in (" close=")" separator=",">
+        #{rid}
+      </foreach>
+    </where>
+
+  </select>
 </mapper>

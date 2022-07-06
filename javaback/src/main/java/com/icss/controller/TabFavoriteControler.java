@@ -1,13 +1,15 @@
 package com.icss.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabFavorite;
+import com.icss.bean.TabRoute;
 import com.icss.service.TabFavoriteService;
 import com.icss.util.ResResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/favorite")
@@ -43,4 +45,18 @@ public class TabFavoriteControler {
 
         return rr;
     }
+
+    @RequestMapping("/myfavorite")
+    public ResResult<PageInfo> subCount(Integer uid ,Integer page) {
+
+        PageInfo pageInfo = tabFavoriteService.myfavorite(uid,page);
+        ResResult rr = null;
+        if (pageInfo.getSize() != 0) {
+            rr = new ResResult(1, "ok", pageInfo);
+        } else {
+            rr = new ResResult(0, "erro");
+        }
+        return rr;
+    }
+
 }

@@ -41,3 +41,8 @@ https://github.com/lichunxu1218/com.icss.git
   http://www.travel.com/favorite/addCount?rid=1&uid=1&rcount=9
   取消收藏
   http://www.travel.com/favorite/subCount?rid=1&uid=1&rcount=10
+
+7.我的收藏功能
+  //我的收藏
+  http://www.travel.com/favorite/myfavorite?uid=1&page=1
+

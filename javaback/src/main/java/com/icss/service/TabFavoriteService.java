@@ -1,6 +1,11 @@
 package com.icss.service;
 
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabFavorite;
+import com.icss.bean.TabRoute;
+
+import java.util.List;
+
 public interface TabFavoriteService{
 
 
@@ -19,4 +24,6 @@ public interface TabFavoriteService{
     int deleteForUser(Integer rid, Integer uid, Integer rcount);
 
     int insertForUser(Integer rid, Integer uid, Integer rcount);
+    //我的收藏 返回收藏到的线路的信息
+    PageInfo myfavorite(Integer uid , Integer page);
 }

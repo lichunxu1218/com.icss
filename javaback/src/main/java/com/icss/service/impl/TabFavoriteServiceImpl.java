@@ -1,5 +1,7 @@
 package com.icss.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.icss.bean.TabFavorite;
 import com.icss.bean.TabRoute;
 import com.icss.mapper.TabFavoriteMapper;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class TabFavoriteServiceImpl implements TabFavoriteService {
@@ -68,7 +71,6 @@ public class TabFavoriteServiceImpl implements TabFavoriteService {
     }
 
     /**
-     *
      * @param rid
      * @param uid
      * @param rcount
@@ -78,7 +80,7 @@ public class TabFavoriteServiceImpl implements TabFavoriteService {
     public int insertForUser(Integer rid, Integer uid, Integer rcount) {
 
         TabFavorite favorite = new TabFavorite(rid, uid, new Date());
-        System.out.println("新增收藏"+favorite);
+        System.out.println("新增收藏" + favorite);
         TabRoute route = new TabRoute();
         route.setRid(rid);
         route.setCount(rcount + 1);
@@ -88,5 +90,20 @@ public class TabFavoriteServiceImpl implements TabFavoriteService {
 
         System.out.println(i);
         return i;
+    }
+
+    /**
+     * 我的收藏 返回收藏到的线路的信息
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    public PageInfo myfavorite(Integer uid ,Integer page) {
+
+        Integer[] rids = tabFavoriteMapper.myfavorite(uid);
+        PageHelper.startPage(page, 12);
+        PageInfo pageInfo = new PageInfo(tabRouteMapper.getAllByRids(rids), 10);
+        return pageInfo;
     }
 }

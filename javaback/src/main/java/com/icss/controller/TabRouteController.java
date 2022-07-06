@@ -32,13 +32,14 @@ public class TabRouteController {
 
     /**
      * 查询详细内容
+     *
      * @param rid
      * @return 数据
      */
     @RequestMapping("/detail")
     public ResResult<TabRouteVo> getRouteByrid(Integer rid) {
 
-       TabRouteVo tabRouteVo = tabRouteService.selectByPrimaryKey(rid);
+        TabRouteVo tabRouteVo = tabRouteService.selectByPrimaryKey(rid);
         ResResult rr = null;
         if (tabRouteVo != null) {
             rr = new ResResult(1, "ok", tabRouteVo);

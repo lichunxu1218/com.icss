@@ -20,4 +20,5 @@ public interface TabRouteMapper {
 
     List<TabRoute> selectByCidAndValue(@Param("cid") Integer cid,@Param("value")  String value);
 
+    List<TabRoute> getAllByRids(Integer[] array);
 }
