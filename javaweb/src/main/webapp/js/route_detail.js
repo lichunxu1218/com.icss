@@ -21,7 +21,6 @@ $(function () {
     });
 
 
-
 })
 
 //展示路线的详细信息（价格等）
@@ -37,22 +36,22 @@ function fortabRoute(route) {
 
 //展示路线的图片信息
 function forImg(list) {
-    
+
     var str = ' <dt>\n' +
-        '                    <img alt="" class="big_img" src="'+list[0].bigpic+'">\n' +
-        '                </dt>\n' +
-        '                <dd >' +
+        '       <img alt="" class="big_img" src="' + list[0].bigpic + '">\n' +
+        '        </dt>\n' +
+        '        <dd >' +
         '<a class="up_img up_img_disable"></a>\n';
 
 
-    for(i = 0;i<list.length;i++){
-        if(i>3){
-            str+='  <a title="" class="little_img" data-bigpic="'+list[i].bigpic+'" style="display:none;">\n' +
-                '         <img src="'+list[i].smallpic+'">\n' +
+    for (i = 0; i < list.length; i++) {
+        if (i > 3) {
+            str += '  <a title="" class="little_img" data-bigpic="' + list[i].bigpic + '" style="display:none;">\n' +
+                '         <img src="' + list[i].smallpic + '">\n' +
                 '   </a>'
-        }else{
-            str+='  <a title="" class="little_img" data-bigpic="'+list[i].bigpic+'">\n' +
-                '        <img src="'+list[i].smallpic+'">\n' +
+        } else {
+            str += '  <a title="" class="little_img" data-bigpic="' + list[i].bigpic + '">\n' +
+                '        <img src="' + list[i].smallpic + '">\n' +
                 '   </a>'
         }
     }
