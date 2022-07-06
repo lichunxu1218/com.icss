@@ -35,7 +35,9 @@ $("#exit").click(function () {
         type: 'get',
         dataType: 'json',
         success: function (obj) {
+			//清除缓存
             window.sessionStorage.removeItem("username");
+            window.sessionStorage.removeItem("uid"); 
             login();
         }
     })

@@ -15,5 +15,8 @@ public interface TabFavoriteService{
     int updateByPrimaryKeySelective(TabFavorite record);
 
     int updateByPrimaryKey(TabFavorite record);
+    //取消收藏的，同时修改收藏的count
+    int deleteForUser(Integer rid, Integer uid, Integer rcount);
 
+    int insertForUser(Integer rid, Integer uid, Integer rcount);
 }

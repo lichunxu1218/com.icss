@@ -36,6 +36,7 @@ $("#exit").click(function () {
         dataType: 'json',
         success: function (obj) {
             window.sessionStorage.removeItem("username");
+            window.sessionStorage.removeItem("uid");
             login();
         }
     })

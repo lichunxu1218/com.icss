@@ -29,3 +29,15 @@ https://github.com/lichunxu1218/com.icss.git
     http://www.travel.com/route/select?cid=5&page=1&value=春节
 
     查看详细：http://www.travel.com/route/detail?rid=1
+
+6.收藏功能
+   判断用户是否登录
+   判断是否被收收藏
+
+   判断用户是否登录
+   http://www.travel.com/favorite/select?rid=1&uid=1 
+
+  添加收藏
+  http://www.travel.com/favorite/addCount?rid=1&uid=1&rcount=9
+  取消收藏
+  http://www.travel.com/favorite/subCount?rid=1&uid=1&rcount=10
